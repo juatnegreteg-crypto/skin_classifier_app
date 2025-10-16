@@ -4,6 +4,7 @@ import timm
 import gdown
 from PIL import Image
 import numpy as np
+import os
 
 # ===== CONFIGURACIÓN =====
 st.title("🩺 Clasificador de Enfermedades de Piel (EfficientNet-B3)")
