@@ -14,15 +14,22 @@ MODEL_URL = "https://drive.google.com/uc?id=13L6nxHVSeMznr7okUVrguR86Dmxc7HLc"
 MODEL_PATH = "best_model.pth"
 
 @st.cache_resource
+@st.cache_resource
 def load_model():
-    if not os.path.exists(MODEL_PATH):
-        with st.spinner("Descargando modelo desde Google Drive..."):
-            gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+    model = timm.create_model('efficientnet_b3', pretrained=False, num_classes=7)
+    checkpoint = torch.load(MODEL_PATH, map_location=torch.device("cpu"))
 
-    model = timm.create_model("efficientnet_b3", pretrained=False, num_classes=7)
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device("cpu")))
+    # Si es un diccionario con 'model_state_dict', lo usamos
+    if "model_state_dict" in checkpoint:
+        state_dict = checkpoint["model_state_dict"]
+    else:
+        state_dict = checkpoint
+
+    # Cargar los pesos al modelo
+    model.load_state_dict(state_dict, strict=False)
     model.eval()
     return model
+
 
 model = load_model()
 
