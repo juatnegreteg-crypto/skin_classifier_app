@@ -13,7 +13,7 @@ import os
 # ==========================
 st.set_page_config(page_title="Clasificador de Lesiones de Piel", page_icon="🧬", layout="centered")
 st.title("🩺 Clasificador de Enfermedades de Piel (EfficientNet-B3)")
-st.write("Sube una imagen de una lesión cutánea para clasificarla entre **7 tipos** del conjunto **HAM10000**.")
+st.write("Sube una imagen de una lesión cutánea para clasificarla.")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_URL = "https://drive.google.com/uc?id=13L6nxHVSeMznr7okUVrguR86Dmxc7HLc"
