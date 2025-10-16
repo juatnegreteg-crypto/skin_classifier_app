@@ -9,7 +9,7 @@ import numpy as np
 st.title("🩺 Clasificador de Enfermedades de Piel (EfficientNet-B3)")
 
 # Enlace de tu modelo en Google Drive (usa gdown)
-MODEL_URL = "https://drive.google.com/uc?id=TU_ID_DE_DRIVE"
+MODEL_URL = "https://drive.google.com/uc?id=13L6nxHVSeMznr7okUVrguR86Dmxc7HLc"
 MODEL_PATH = "best_model.pth"
 
 @st.cache_resource
