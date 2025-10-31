@@ -16,7 +16,7 @@ st.title("🩺 Clasificador de Enfermedades de Piel (EfficientNet-B3)")
 st.write("Sube una imagen de una lesión cutánea para clasificarla.")
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-MODEL_URL = "https://drive.google.com/uc?id=1CYdBxbl81JihI2O6xQEkaT0KmWVzIe_S"
+MODEL_URL = "https://drive.google.com/uc?id=1I4VRNyYJZ-O6QExy4luGSEtcINIBFrVI"
 MODEL_PATH = "best_model.pth"
 
 # ==========================
